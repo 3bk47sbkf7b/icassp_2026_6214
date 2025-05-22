@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Samples – Supplementary Material</title>
+
+  <!--
+    ────────────────────────────────────────────────────────────────────────
+    GitHub Pages notes
+    ────────────────────────────────────────────────────────────────────────
+    • Place your audio files in a folder named **samples/** at repo-root.
+    • Provide BOTH .mp3 *and* .wav (or .ogg) for widest browser support.
+    • Duplicate the <figure> block below for each new sample. Keep captions
+      concise; they will be cited in the paper. Use #id anchors to deep-link.
+    • Add/update the <details class="prompt"> inside each figure to display
+      the prompt associated with that clip.
+    • After pushing to the default branch, enable Pages → “Deploy from branch”.
+  -->
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --fg: #111111;
+      --accent: #2563eb; /* Tailwind blue-600 for subtle accents */
+      --prompt-bg: rgba(0,0,0,0.05);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --fg: #f3f4f6;
+        --prompt-bg: rgba(255,255,255,0.05);
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.55;
+    }
+
+    header { padding: 2rem 1rem 0; text-align: center; }
+    h1 { font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem); margin: 0 0 0.5rem; }
+    p.description { max-width: 42rem; margin: 0 auto 2.5rem; color: rgb(100 116 139 / 0.85); }
+
+    main { max-width: 48rem; margin: 0 auto; padding: 0 1rem 4rem; }
+    figure.sample { margin: 0 0 3rem; }
+    figcaption { margin-bottom: 0.5rem; font-weight: 600; }
+    figcaption span.label { color: var(--accent); }
+    audio { width: 100%; height: 54px; }
+
+    /* Prompt accordion */
+    details.prompt { margin-top: 0.75rem; }
+    details.prompt summary { cursor: pointer; font-size: 0.95rem; font-weight: 500; color: var(--accent); }
+    details.prompt pre {
+      white-space: pre-wrap;
+      margin: 0.5rem 0 0;
+      background: var(--prompt-bg);
+      padding: 0.75rem 1rem;
+      border-radius: 0.375rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.875rem;
+    }
+
+    footer { text-align: center; font-size: 0.875rem; color: rgb(100 116 139 / 0.7); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Supplementary Voice Samples</h1>
+    <p class="description">
+      Click <em>Play</em> on any clip below to listen. Expand the <strong>Prompt</strong>
+      section to view the textual context fed to the TTS/model.
+    </p>
+  </header>
+
+  <main>
+    <!-- ───── Sample 1 ───── -->
+    <figure class="sample" id="sample-1">
+      <figcaption>
+        <span class="label">Sample&nbsp;1:</span> Baseline TTS output
+      </figcaption>
+      <audio controls preload="none">
+        <source src="samples/github_pages_test.wav" type="audio/wav" />
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+      <details class="prompt">
+        <summary>Prompt</summary>
+        <pre>
+You work for First Metro Bank which is a bank and your name is Sanni Virtanen.
+Information: The customer's transaction for $1,200 at Home Depot was declined.
+Verify customer identity. The transaction was flagged due to unusual location
+(transaction attempted in Miami, FL; customer normally transacts in Seattle, WA).
+        </pre>
+      </details>
+    </figure>
+
+    <!-- ───── Sample 2 ───── -->
+    <figure class="sample" id="sample-2">
+      <figcaption>
+        <span class="label">Sample&nbsp;2:</span> Proposed model (speaker A)
+      </figcaption>
+      <audio controls preload="none">
+        <source src="samples/github_pages_test.wav" type="audio/wav" />
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+      <details class="prompt">
+        <summary>Prompt</summary>
+        <pre>
+[Replace with the full text prompt shown to the model for Sample 2.]
+        </pre>
+      </details>
+    </figure>
+
+    <!-- ───── Sample 3 ───── -->
+    <figure class="sample" id="sample-3">
+      <figcaption>
+        <span class="label">Sample&nbsp;3:</span> Proposed model (speaker B)
+      </figcaption>
+      <audio controls preload="none">
+        <source src="samples/github_pages_test.wav" type="audio/wav" />
+        Your browser does not support the <code>audio</code> element.
+      </audio>
+      <details class="prompt">
+        <summary>Prompt</summary>
+        <pre>
+[Replace with the full text prompt shown to the model for Sample 3.]
+        </pre>
+      </details>
+    </figure>
+  </main>
+
+  <footer>
+    © <span id="year"></span> • Provided for academic review only
+  </footer>
+
+  <script>
+    // Keep the footer year current
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
