@@ -15,7 +15,7 @@
       concise; they will be cited in the paper. Use #id anchors to deep-link.
     • Add/update the <details class="prompt"> inside each figure to display
       the prompt associated with that clip.
-    • After pushing to the default branch, enable Pages → “Deploy from branch”.
+    • After pushing to the default branch, enable Pages → "Deploy from branch".
   -->
 
   <style>
@@ -50,6 +50,17 @@
     p.description { max-width: 42rem; margin: 0 auto 2.5rem; color: rgb(100 116 139 / 0.85); }
 
     main { max-width: 48rem; margin: 0 auto; padding: 0 1rem 4rem; }
+    
+    section { margin-bottom: 4rem; }
+    section:last-child { margin-bottom: 0; }
+    
+    h2 { 
+      font-size: 1.75rem; 
+      text-align: center; 
+      margin: 3rem 0 2rem; 
+      color: var(--fg);
+    }
+    
     figure.sample { margin: 0 0 3rem; }
     figcaption { margin-bottom: 0.5rem; font-weight: 600; }
     figcaption span.label { color: var(--accent); }
@@ -81,99 +92,145 @@
   </header>
 
   <main>
-    <!-- ───── Sample 1 ───── -->
-    <figure class="sample" id="sample-1">
-      <figcaption>
-        <span class="label">Sample&nbsp;1:</span> Medical office assistant
-      </figcaption>
-      <audio controls preload="none">
-        <source src="samples/dr_jones.wav" type="audio/wav" />
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-      <details class="prompt">
-        <summary>Prompt</summary>
-        <pre>
+    <!-- ───── Model Output Samples Section ───── -->
+    <section>
+      <h2>Model Output Samples</h2>
+      
+      <!-- ───── Sample 1 ───── -->
+      <figure class="sample" id="sample-1">
+        <figcaption>
+          <span class="label">Sample&nbsp;1:</span> Medical office assistant
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/dr_jones.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Prompt</summary>
+          <pre>
 You work for Dr. Jones's medical office, and you are receiving calls to record information for new patients.
 Information: Record full name, date of birth, any medication allergies, tobacco smoking history, alcohol consumption history, and any prior medical conditions.
 Assure the patient that this information will be confidential, if they ask.
-        </pre>
-      </details>
-    </figure>
+          </pre>
+        </details>
+      </figure>
 
-    <!-- ───── Sample 2 ───── -->
-    <figure class="sample" id="sample-2">
-      <figcaption>
-        <span class="label">Sample&nbsp;2:</span> Automated bank assistant
-      </figcaption>
-      <audio controls preload="none">
-        <source src="samples/github_pages_test.wav" type="audio/wav" />
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-      <details class="prompt">
-        <summary>Prompt</summary>
-        <pre>
+      <!-- ───── Sample 2 ───── -->
+      <figure class="sample" id="sample-2">
+        <figcaption>
+          <span class="label">Sample&nbsp;2:</span> Automated bank assistant
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/github_pages_test.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Prompt</summary>
+          <pre>
 You work for First Metro Bank which is a bank and your name is Sanni Virtanen.
 Information: The customer's transaction for $1,200 at Home Depot was declined.
 Verify customer identity. The transaction was flagged due to unusual location
 (transaction attempted in Miami, FL; customer normally transacts in Seattle, WA).
-        </pre>
-      </details>
-    </figure>
+          </pre>
+        </details>
+      </figure>
 
-    <!-- ───── Sample 3 ───── -->
-    <figure class="sample" id="sample-3">
-      <figcaption>
-        <span class="label">Sample&nbsp;3:</span> Automated bank assistant
-      </figcaption>
-      <audio controls preload="none">
-        <source src="samples/hanul.wav" type="audio/wav" />
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-      <details class="prompt">
-        <summary>Prompt</summary>
-        <pre>
+      <!-- ───── Sample 3 ───── -->
+      <figure class="sample" id="sample-3">
+        <figcaption>
+          <span class="label">Sample&nbsp;3:</span> Automated bank assistant
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/hanul.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Prompt</summary>
+          <pre>
 You work for Hanul California which is a Romanian restaurant and your name is Lenuta Harghita.
 Information: Current menu has: Ciorbă de burtă (Tripe soup) for $5, Sarmale (grape vine wraps) is $6 for 3 pieces, Mici (kebab) is $8 for 2 pieces, French fries is $2.
 You only offer takeout and don't deliver.
-        </pre>
-      </details>
-    </figure>
+          </pre>
+        </details>
+      </figure>
 
-    <!-- ───── Sample 4 ───── -->
-    <figure class="sample" id="sample-4">
-      <figcaption>
-        <span class="label">Sample&nbsp;4:</span> Trivia show call-in (generalization beyond training prompts)
-      </figcaption>
-      <audio controls preload="none">
-        <source src="samples/trivia.wav" type="audio/wav" />
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-      <details class="prompt">
-        <summary>Prompt</summary>
-        <pre>
+      <!-- ───── Sample 4 ───── -->
+      <figure class="sample" id="sample-4">
+        <figcaption>
+          <span class="label">Sample&nbsp;4:</span> Trivia show call-in (generalization beyond training prompts)
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/trivia.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Prompt</summary>
+          <pre>
 You work for Quizmasters which is a trivia show and your name is Master Knowitall.
 Information: What is the capital of Canada? (its Ottawa), What did the Titanic hit? (an iceberg).
 Ask the questions one by one, don't tell the answer. If they are right on both questions then invite them to the show, or else wish them luck.
-        </pre>
-      </details>
-    </figure>
+          </pre>
+        </details>
+      </figure>
 
-    <!-- ───── Sample 5 ───── -->
-    <figure class="sample" id="sample-5">
-      <figcaption>
-        <span class="label">Sample&nbsp;5:</span> Literature teacher (generalization beyond training prompts)
-      </figcaption>
-      <audio controls preload="none">
-        <source src="samples/literature_teacher.wav" type="audio/wav" />
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-      <details class="prompt">
-        <summary>Prompt</summary>
-        <pre>
+      <!-- ───── Sample 5 ───── -->
+      <figure class="sample" id="sample-5">
+        <figcaption>
+          <span class="label">Sample&nbsp;5:</span> Literature teacher (generalization beyond training prompts)
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/literature_teacher.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Prompt</summary>
+          <pre>
 You are a literature teacher.
-        </pre>
-      </details>
-    </figure>
+          </pre>
+        </details>
+      </figure>
+    </section>
+
+    <!-- ───── Training Dataset Samples Section ───── -->
+    <section>
+      <h2>Training Dataset Samples</h2>
+      
+      <!-- ───── Sample 6 ───── -->
+      <figure class="sample" id="sample-6">
+        <figcaption>
+          <span class="label">Sample&nbsp;6:</span> Synthetic datasample used for training
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/a2d0913adc_id10076_id10018.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Voice Prompt</summary>
+            <audio controls preload="none">
+              <source src="samples/id10076_id10018_x.wav" type="audio/wav" />
+              Your browser does not support the <code>audio</code> element.
+            </audio>
+        </details>
+      </figure>
+
+      <!-- ───── Sample 7 ───── -->
+      <figure class="sample" id="sample-7">
+        <figcaption>
+          <span class="label">Sample&nbsp;7:</span> Synthetic datasample used for training
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/a7fd55947a_id10054_id10076.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Voice Prompt</summary>
+            <audio controls preload="none">
+              <source src="samples/id10054_id10076_x.wav" type="audio/wav" />
+              Your browser does not support the <code>audio</code> element.
+            </audio>
+        </details>
+      </figure>
+    </section>
   </main>
 
   <footer>
