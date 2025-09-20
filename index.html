@@ -79,12 +79,42 @@
       font-size: 0.875rem;
     }
 
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 2rem;
+      table-layout: fixed; /* ensures equal column widths */
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .comparison-table th {
+      font-weight: 600;
+      color: var(--accent);
+      border-bottom: 1px solid rgb(100 116 139 / 0.3);
+    }
+
+    .comparison-table audio {
+      width: 100%;
+      height: 54px;
+    }
+
+
+
+
+
+
+
     footer { text-align: center; font-size: 0.875rem; color: rgb(100 116 139 / 0.7); }
   </style>
 </head>
 <body>
   <header>
-    <h1>Supplementary Voice Samples</h1>
+    <h1>PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models</h1>
     <p class="description">
       Click <em>Play</em> on any clip below to listen. Expand the <strong>Prompt</strong>
       section to view the textual context fed to the model.
@@ -94,7 +124,7 @@
   <main>
     <!-- ───── Recordings of Sample Interactions Section ───── -->
     <section>
-      <h2>Recordings of Sample Interactions</h2>
+      <h2>Realtime Interactions</h2>
       
       <!-- ───── Sample 1 ───── -->
       <figure class="sample" id="sample-1">
@@ -191,47 +221,530 @@ You are a literature teacher.
       </figure>
     </section>
 
-    <!-- ───── Training Dataset Samples Section ───── -->
+
+
+    <!-- ───── Full-Duplex-Bench Samples ───── -->
     <section>
-      <h2>Training Dataset Samples</h2>
+      <h2>Full-Duplex-Bench Samples</h2>
       
-      <!-- ───── Sample 6 ───── -->
-      <figure class="sample" id="sample-6">
+      <!-- ───── QA Sample 0 (comparison as table) ───── -->
+      <figure class="sample" id="qa-sample-0">
         <figcaption>
-          <span class="label">Sample&nbsp;6:</span> Synthetic datasample used for training
+          <span class="label">QA Assistant Sample&nbsp;0:</span> User interruption
         </figcaption>
-        <audio controls preload="none">
-          <source src="samples/dia_sample6_dialogue.wav" type="audio/wav" />
-          Your browser does not support the <code>audio</code> element.
-        </audio>
+
+        <!-- Shared voice prompt FIRST -->
         <details class="prompt">
           <summary>Voice Prompt</summary>
-            <audio controls preload="none">
-              <source src="samples/dia_sample6_voice_prompt.wav" type="audio/wav" />
-              Your browser does not support the <code>audio</code> element.
-            </audio>
+          <audio controls preload="none">
+            <source src="samples/fullduplexbench/QA_09_VPROMPT.wav" type="audio/wav" />
+          </audio>
+          <!-- or, if textual: 
+          <pre>…prompt text…</pre> 
+          -->
         </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_09_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_09_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_09_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_09_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_09_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
       </figure>
 
-      <!-- ───── Sample 7 ───── -->
-      <figure class="sample" id="sample-7">
+
+      <!-- ───── QA Sample 1 (comparison as table) ───── -->
+      <figure class="sample" id="qa-sample-1">
         <figcaption>
-          <span class="label">Sample&nbsp;7:</span> Synthetic datasample used for training
+          <span class="label">QA Assistant Sample&nbsp;1:</span> User interruption
         </figcaption>
-        <audio controls preload="none">
-          <source src="samples/dia_sample7_dialogue.wav" type="audio/wav" />
-          Your browser does not support the <code>audio</code> element.
-        </audio>
+
+        <!-- Shared voice prompt FIRST -->
         <details class="prompt">
           <summary>Voice Prompt</summary>
-            <audio controls preload="none">
-              <source src="samples/dia_sample7_voice_prompt.wav" type="audio/wav" />
-              Your browser does not support the <code>audio</code> element.
-            </audio>
+          <audio controls preload="none">
+            <source src="samples/fullduplexbench/QA_10_VPROMPT.wav" type="audio/wav" />
+          </audio>
+          <!-- or, if textual: 
+          <pre>…prompt text…</pre> 
+          -->
         </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_10_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_10_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_10_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_10_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_10_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
       </figure>
+
+
+      <!-- ───── QA Sample 2 (comparison as table) ───── -->
+      <figure class="sample" id="qa-sample-2">
+        <figcaption>
+          <span class="label">QA Assistant Sample&nbsp;2:</span> User interruption
+        </figcaption>
+
+        <!-- Shared voice prompt FIRST -->
+        <details class="prompt">
+          <summary>Voice Prompt</summary>
+          <audio controls preload="none">
+            <source src="samples/fullduplexbench/QA_11_VPROMPT.wav" type="audio/wav" />
+          </audio>
+          <!-- or, if textual: 
+          <pre>…prompt text…</pre> 
+          -->
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_11_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_11_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_11_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_11_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_11_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+      <!-- ───── QA Sample 3 (comparison as table) ───── -->
+      <figure class="sample" id="qa-sample-3">
+        <figcaption>
+          <span class="label">QA Assistant Sample&nbsp;3:</span> User interruption
+        </figcaption>
+
+        <!-- Shared voice prompt FIRST -->
+        <details class="prompt">
+          <summary>Voice Prompt</summary>
+          <audio controls preload="none">
+            <source src="samples/fullduplexbench/QA_26_VPROMPT.wav" type="audio/wav" />
+          </audio>
+          <!-- or, if textual: 
+          <pre>…prompt text…</pre> 
+          -->
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_26_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_26_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_26_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_26_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_26_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+
+      <!-- ───── QA Sample 4 (comparison as table) ───── -->
+      <figure class="sample" id="qa-sample-4">
+        <figcaption>
+          <span class="label">QA Assistant Sample&nbsp;4:</span> User interruption
+        </figcaption>
+
+        <!-- Shared voice prompt FIRST -->
+        <details class="prompt">
+          <summary>Voice Prompt</summary>
+          <audio controls preload="none">
+            <source src="samples/fullduplexbench/QA_36_VPROMPT.wav" type="audio/wav" />
+          </audio>
+          <!-- or, if textual: 
+          <pre>…prompt text…</pre> 
+          -->
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_36_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_36_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_36_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_36_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/fullduplexbench/QA_36_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
     </section>
+
+
+
+    <!-- ───── Service-Duplex-Bench Samples ───── -->
+    <section>
+      <h2>Service-Duplex-Bench Samples</h2>
+      
+      <!-- ───── Service Sample 0 (comparison as table) ───── -->
+      <figure class="sample" id="serv-sample-0">
+        <figcaption>
+          <span class="label">Service Agent Sample&nbsp;0:</span> [Q0] Pronouncing proper nouns from text prompt
+        </figcaption>
+
+        <!-- Shared text prompt FIRST -->
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for QuickNet Services which is a internet service provider and your name is Koen van der Meer. Information: Verify that the customer account number is 8923456. The customer is requesting a 30-day extension on their broadband service, which will now expire on October 15, 2024. There is a $25 fee for this extension.
+          </pre>
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q0_02_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q0_02_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q0_02_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q0_02_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q0_02_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+
+      <!-- ───── Service Sample 1 (comparison as table) ───── -->
+      <figure class="sample" id="serv-sample-1">
+        <figcaption>
+          <span class="label">Service Agent Sample&nbsp;1:</span> [Q1] Using text prompt details
+        </figcaption>
+
+        <!-- Shared text prompt FIRST -->
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for Celestial Optics which is a telescope store and your name is Silas Ferguson. Information: The store carries three telescope models: Model A (70mm aperture, 40x-150x magnification range, available), Model B (130mm aperture, 100x-300x magnification range, available), and Model C (90mm aperture, 50x-200x magnification range, currently out of stock).
+          </pre>
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q1_43_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q1_43_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q1_43_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q1_43_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q1_43_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+      <!-- ───── Service Sample 2 (comparison as table) ───── -->
+      <figure class="sample" id="serv-sample-2">
+        <figcaption>
+          <span class="label">Service Agent Sample&nbsp;2:</span> [Q2] Using text prompt details
+        </figcaption>
+
+        <!-- Shared text prompt FIRST -->
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for Mystery Quest Events which is a event management and your name is Jalen Powell. Information: Weekend event: $75 per team (includes 4 participants). Additional members $10 each. 8 AM start time. Online registration available until 5 PM Thursday.
+          </pre>
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q2_12_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q2_12_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q2_12_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q2_12_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q2_12_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+
+
+
+
+      <!-- ───── Service Sample 3 (comparison as table) ───── -->
+      <figure class="sample" id="serv-sample-3">
+        <figcaption>
+          <span class="label">Service Agent Sample&nbsp;3:</span> [Q3] Unfulfillable request
+        </figcaption>
+
+        <!-- Shared text prompt FIRST -->
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for AeroRentals Pro which is a drone rental company and your name is Tomaz Novak. Information: AeroRentals Pro has the following availability: PhoenixDrone X ($65/4 hours, $110/8 hours), and the premium SpectraDrone 9 ($95/4 hours, $160/8 hours). Deposit required: $150 for standard models, $300 for premium.
+          </pre>
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q3_29_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q3_29_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q3_29_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q3_29_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q3_29_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+
+
+      <!-- ───── Service Sample 4 (comparison as table) ───── -->
+      <figure class="sample" id="serv-sample-4">
+        <figcaption>
+          <span class="label">Service Agent Sample&nbsp;4:</span> [Q4] Handling customer rudeness
+        </figcaption>
+
+        <!-- Shared text prompt FIRST -->
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for StreamLink Services which is a cable service provider and your name is Jalen Powell. Information: Model C900 is available. A technician will need to install it. Please choose a preferred time slot from Monday-Friday 9 AM-5 PM.
+          </pre>
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q4_22_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q4_22_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q4_22_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q4_22_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q4_22_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+      <!-- ───── Service Sample 5 (comparison as table) ───── -->
+      <figure class="sample" id="serv-sample-5">
+        <figcaption>
+          <span class="label">Service Agent Sample&nbsp;5:</span> [Q5] Information not specified in text prompt
+        </figcaption>
+
+        <!-- Shared text prompt FIRST -->
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for Celestial Optics which is a telescope store and your name is Silas Ferguson. Information: The store carries three telescope models: Model A (70mm aperture, 40x-150x magnification range, available), Model B (130mm aperture, 100x-300x magnification range, available), and Model C (90mm aperture, 50x-200x magnification range, currently out of stock).
+          </pre>
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q5_47_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q5_47_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q5_47_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q5_47_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q5_47_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+      <!-- ───── Service Sample 6 (comparison as table) ───── -->
+      <figure class="sample" id="serv-sample-6">
+        <figcaption>
+          <span class="label">Service Agent Sample&nbsp;6:</span> [Q6] Request unrelated to text prompt
+        </figcaption>
+
+        <!-- Shared text prompt FIRST -->
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for PlaySafe Toys which is a toy store and your name is Kartik Sharma. Information: Product ID 534083 (Recalled: Small parts, choking hazard for children under 3). Product ID 380270 (Recalled: Defective packaging).
+          </pre>
+        </details>
+
+        <!-- Model comparison table -->
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>PersonaPlex</th>
+              <th>Gemini</th>
+              <th>FreezeOmni</th>
+              <th>Moshi</th>
+              <th>Qwen2.5Omni</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q6_40_PERSONAPLEX.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q6_40_GEMINI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q6_40_FREEZEOMNI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q6_40_MOSHI.wav" type="audio/wav" /></audio></td>
+              <td><audio controls preload="none"><source src="samples/serviceduplexbench/SERV_Q6_40_QWENOMNI.wav" type="audio/wav" /></audio></td>
+            </tr>
+          </tbody>
+        </table>
+      </figure>
+
+
+
+
+
+
+
+    </section>
+
+
+
+
   </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <footer>
     © <span id="year"></span> • Provided for academic review only
