@@ -47,9 +47,9 @@
 
     header { padding: 2rem 1rem 0; text-align: center; }
     h1 { font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem); margin: 0 0 0.5rem; }
-    p.description { max-width: 42rem; margin: 0 auto 2.5rem; color: rgb(100 116 139 / 0.85); }
+    p.description { max-width: 50rem; margin: 0 auto 2.5rem; color: rgb(100 116 139 / 0.85); text-align: center;}
 
-    main { max-width: 48rem; margin: 0 auto; padding: 0 1rem 4rem; }
+    main { max-width: 55rem; margin: 0 auto; padding: 0 1rem 4rem; }
     
     section { margin-bottom: 4rem; }
     section:last-child { margin-bottom: 0; }
@@ -116,8 +116,8 @@
   <header>
     <h1>PersonaPlex: Voice and Role Control for Full Duplex Conversational Speech Models</h1>
     <p class="description">
-      Click <em>Play</em> on any clip below to listen. Expand the <strong>Prompt</strong>
-      section to view the textual context fed to the model.
+      Click <em>Play</em> on any clip below to listen. Expand the <strong>Text Prompt</strong> or <strong>Voice Prompt</strong>
+      section to view the text or voice prompt to the model.
     </p>
   </header>
 
@@ -136,7 +136,7 @@
           Your browser does not support the <code>audio</code> element.
         </audio>
         <details class="prompt">
-          <summary>Prompt</summary>
+          <summary>Text Prompt</summary>
           <pre>
 You work for Dr. Jones's medical office, and you are receiving calls to record information for new patients.
 Information: Record full name, date of birth, any medication allergies, tobacco smoking history, alcohol consumption history, and any prior medical conditions.
@@ -148,14 +148,34 @@ Assure the patient that this information will be confidential, if they ask.
       <!-- ───── Sample 2 ───── -->
       <figure class="sample" id="sample-2">
         <figcaption>
-          <span class="label">Sample&nbsp;2:</span> Automated bank assistant
+          <span class="label">Sample&nbsp;2:</span> Restaurant take-out ordering
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/conplex_sample7_restaurant_newer.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You work for Hanul California which is a Romanian restaurant and your name is Lenuta Harghita.
+Information: Current menu has: Ciorbă de burtă (Tripe soup) for $5, Sarmale (grape vine wraps) is $6 for 3 pieces, Mici (kebab) is $8 for 2 pieces, French fries is $2.
+You only offer takeout and don't deliver.
+          </pre>
+        </details>
+      </figure>
+
+
+      <!-- ───── Sample 3 ───── -->
+      <figure class="sample" id="sample-3">
+        <figcaption>
+          <span class="label">Sample&nbsp;3:</span> Automated bank assistant
         </figcaption>
         <audio controls preload="none">
           <source src="samples/conplex_sample2_bank_assistant.wav" type="audio/wav" />
           Your browser does not support the <code>audio</code> element.
         </audio>
         <details class="prompt">
-          <summary>Prompt</summary>
+          <summary>Text Prompt</summary>
           <pre>
 You work for First Metro Bank which is a bank and your name is Sanni Virtanen.
 Information: The customer's transaction for $1,200 at Home Depot was declined.
@@ -165,36 +185,36 @@ Verify customer identity. The transaction was flagged due to unusual location
         </details>
       </figure>
 
-      <!-- ───── Sample 3 ───── -->
-      <figure class="sample" id="sample-3">
-        <figcaption>
-          <span class="label">Sample&nbsp;3:</span> Restaurant take-out ordering
-        </figcaption>
-        <audio controls preload="none">
-          <source src="samples/conplex_sample3_restaurant.wav" type="audio/wav" />
-          Your browser does not support the <code>audio</code> element.
-        </audio>
-        <details class="prompt">
-          <summary>Prompt</summary>
-          <pre>
-You work for Hanul California which is a Romanian restaurant and your name is Lenuta Harghita.
-Information: Current menu has: Ciorbă de burtă (Tripe soup) for $5, Sarmale (grape vine wraps) is $6 for 3 pieces, Mici (kebab) is $8 for 2 pieces, French fries is $2.
-You only offer takeout and don't deliver.
-          </pre>
-        </details>
-      </figure>
 
       <!-- ───── Sample 4 ───── -->
       <figure class="sample" id="sample-4">
         <figcaption>
-          <span class="label">Sample&nbsp;4:</span> Trivia show call-in (generalization beyond training prompts)
+          <span class="label">Sample&nbsp;4:</span> QA assistant (generalization beyond training conversation duration)
+        </figcaption>
+        <audio controls preload="none">
+          <source src="samples/conplex_sample6_numpy.wav" type="audio/wav" />
+          Your browser does not support the <code>audio</code> element.
+        </audio>
+        <details class="prompt">
+          <summary>Text Prompt</summary>
+          <pre>
+You are a wise and friendly teacher. Answer questions or provide advice in a clear and engaging way.
+          </pre>
+        </details>
+      </figure>
+    </section>
+
+      <!-- ───── Sample 5 ───── -->
+      <figure class="sample" id="sample-5">
+        <figcaption>
+          <span class="label">Sample&nbsp;5:</span> Trivia show call-in (generalization beyond training prompts)
         </figcaption>
         <audio controls preload="none">
           <source src="samples/conplex_sample4_trivia.wav" type="audio/wav" />
           Your browser does not support the <code>audio</code> element.
         </audio>
         <details class="prompt">
-          <summary>Prompt</summary>
+          <summary>Text Prompt</summary>
           <pre>
 You work for Quizmasters which is a trivia show and your name is Master Knowitall.
 Information: What is the capital of Canada? (its Ottawa), What did the Titanic hit? (an iceberg).
@@ -203,23 +223,7 @@ Ask the questions one by one, don't tell the answer. If they are right on both q
         </details>
       </figure>
 
-      <!-- ───── Sample 5 ───── -->
-      <figure class="sample" id="sample-5">
-        <figcaption>
-          <span class="label">Sample&nbsp;5:</span> Literature teacher (generalization beyond training prompts)
-        </figcaption>
-        <audio controls preload="none">
-          <source src="samples/conplex_sample5_literature_teacher.wav" type="audio/wav" />
-          Your browser does not support the <code>audio</code> element.
-        </audio>
-        <details class="prompt">
-          <summary>Prompt</summary>
-          <pre>
-You are a literature teacher.
-          </pre>
-        </details>
-      </figure>
-    </section>
+
 
 
 
@@ -227,6 +231,13 @@ You are a literature teacher.
     <section>
       <h2>Full-Duplex-Bench Samples</h2>
       
+      <p class="description">
+        All samples in this section use a fixed text prompt for the QA assistant role:
+        <br>
+        <em>"You are a wise and friendly teacher. Answer questions or provide advice in a clear and engaging way."</em>
+      </p>
+
+
       <!-- ───── QA Sample 0 (comparison as table) ───── -->
       <figure class="sample" id="qa-sample-0">
         <figcaption>
